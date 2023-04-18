@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<div class="nota-section">
+  <div class="form-nota-section">
+    <form action="" method="post">
+      {% csrf_token %}
+      <table>
+  
+      {{ form.titulo }}
+      {{ form.texto }}
+      </table>
+      <input type="submit" class="submit-note-button" value="Submit">
+  </form>
+  </div>
+</div>
+
+{% endblock %}

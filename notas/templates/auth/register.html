@@ -1,0 +1,58 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+
+{% endif %}
+
+<section class="register-section">
+  <header class="register-header">
+    <h2>Sign up</h2>
+    <p>Become a member and enjoy the full potential of notes.</p>
+  </header>
+
+  {% if form.non_field_errors %}
+    <ul class='form-errors'>
+        {% for error in form.non_field_errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+  {% endif %}
+  <form action="" method="post">
+    {% csrf_token %}
+
+
+    <label for="{{ form.username.id_for_label }}">
+      {{ form.username }}
+      <span class="input-placeholder"> {{form.username.name}} </span>
+    </label>
+
+    <label for="{{ form.email.id_for_label }}">
+      {{ form.email }}
+      <span class="input-placeholder"> {{form.email.name}} </span>
+    </label>
+
+    <label for="{{ form.password1.id_for_label }}">
+      {{ form.password1 }}
+      <span class="input-placeholder"> password </span>
+    </label>
+
+    <label for="{{ form.password2.id_for_label }}">
+      {{ form.password2 }}
+      <span class="input-placeholder"> Confirm password </span>
+    </label>
+
+    {{ form.password1.help_text}}
+    <input type="submit" value="Sign up" class="signup-button auth__button"/>
+  </form>
+  <a href="{% url 'google_login' %}" class="auth__button">Google</a>
+</section> 
+
+
+{% endblock %}

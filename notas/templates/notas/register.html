@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+
+{% endfor %}
+
+<section class="register-section">
+  <form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_p }}
+    </table>
+    <input type="submit" value="Sign up" >
+  </form>
+</section>
+
+
+{% endblock %}
