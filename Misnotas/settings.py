@@ -176,4 +176,4 @@ LOGIN_URL = 'login-c'
 LOGIN_REDIRECT_URL = '/misnotas'
 LOGOUT_REDIRECT_URL = '/'
 
-SITE_ID = 2
+SITE_ID = 1
