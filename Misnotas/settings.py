@@ -10,8 +10,14 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
+# from django.core.wsgi import get_wsgi_application
+# application = get_wsgi_application()
+
 import os
+# from django.contrib.sites.models import Site
 import dj_database_url
+
+# Site.objects.create(pk=1, domain='http://127.0.0.1:8000/', name='example.com')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,8 +34,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = 'RENDER' not in os.environ
+# DEBUG = True
+DEBUG = 'RENDER' not in os.environ
 
 # ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = []
@@ -54,6 +60,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'django.contrib.sites',
 ]
 
 MIDDLEWARE = [
@@ -176,4 +183,4 @@ LOGIN_URL = 'login-c'
 LOGIN_REDIRECT_URL = '/misnotas'
 LOGOUT_REDIRECT_URL = '/'
 
-SITE_ID = 1
+SITE_ID = 3
