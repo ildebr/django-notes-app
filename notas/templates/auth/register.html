@@ -50,8 +50,10 @@
 
     {{ form.password1.help_text}}
     <input type="submit" value="Sign up" class="signup-button auth__button"/>
+    {% load static %}
+      <a href="{% url 'google_login' %}" class="signup-button auth__button google-button"> <img src="{% static 'img/g-normal.png' %}" alt="barras" class="google-icon"> Log in with Google</a>
   </form>
-  <a href="{% url 'google_login' %}" class="auth__button">Google</a>
+  
 </section> 
 
 

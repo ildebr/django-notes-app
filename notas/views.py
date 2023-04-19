@@ -23,7 +23,7 @@ def index(request):
     return render(request, 'index.html', context)
 
 def landing(request):
-    return render(request, 'landing.html')
+    return render(request, 'landingpage.html')
 
 class NotaDetailView(generic.DetailView):
     model = Nota

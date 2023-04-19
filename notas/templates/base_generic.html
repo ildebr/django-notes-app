@@ -77,6 +77,26 @@
           {% endif %}
           
         </div>
+
+        <section class="extra">
+          {% if user.is_authenticated %}
+          <a href="{% url 'mis-notas' %}" class="mis-notas-link">Mis notas</a>
+          <a href="{% url 'logout' %}" class="logout-link">Log out</a>
+        
+          {% else %}
+        
+          <div class="extra-links">
+            <a href="{% url 'login-c' %}" class="login-link">Log in</a>
+            <span> or </span> 
+            <a href="{% url 'register' %}" class="login-link">register</a>
+            <span class="line"></span>
+            <a href="{% url 'google_login' %}" class="signup-button auth__button google-button"> <img src="{% static 'img/g-normal.png' %}" alt="barras" class="google-icon"> Log in with Google</a>
+          </div>
+        
+          {% endif %}
+        
+          <p class="personal">Work in progress, made by Ildebrando Quinchoa. All rights reserved, for more of my work visit my <a href="https://ildebr.github.io/portfolio" class="portafolio-link">portfolio.</a></p>
+        </section>
       </div>
     </div>
 
