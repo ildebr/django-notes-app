@@ -55,10 +55,12 @@
 		
 			  <div class="extra-container">
 				<nav class="about-barras">
-				  {% load static %}
-				  <img src="{% static 'img/barras.svg' %}" alt="barras" class="barras">
-				  {% load static %}
-				  <img src="{% static 'img/x.svg' %}" alt="Close" class="barras hide">
+					<button class="button-three" aria-controls="primary-navigation" aria-expanded="false">
+						<svg stroke="var(--button-color)" fill="none" class="hamburger" viewBox="-10 -10 120 120" width="30">
+						<path class="line" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70">
+						</path>
+						</svg>
+					</button>
 				</nav>
 		
 				<div class="auth-links">
@@ -412,6 +414,25 @@
 		</footer>
 	</footer>
 	</div>
+
+	<script>
+        const buttons = document.querySelectorAll(".button-three");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const currentState = button.getAttribute("data-state");
+
+    if (!currentState || currentState === "closed") {
+      button.setAttribute("data-state", "opened");
+      button.setAttribute("aria-expanded", "true");
+    } else {
+      button.setAttribute("data-state", "closed");
+      button.setAttribute("aria-expanded", "false");
+    }
+  });
+});
+
+    </script>
 
 	{% load static %}
 	<script src="{% static 'js/js.js' %}"></script>

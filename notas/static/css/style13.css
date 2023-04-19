@@ -429,4 +429,38 @@ form {
   background-color: black;
 }
 
+.main-header-content {
+  z-index: 10;
+}
+
+.main-header-content.active {
+  z-index: 1;
+}
+
+.button-three {
+  --button-color: white;
+  overflow: hidden;
+  background: transparent;
+  border: none;
+}
+
+.button-three .hamburger {
+  transition: translate 1s, rotate 1s;
+}
+
+.button-three[aria-expanded=true] .hamburger {
+  translate: 3px -1px;
+  rotate: 0.125turn;
+}
+
+.button-three .line {
+  transition: 1s;
+  stroke-dasharray: 60 31 60 300;
+}
+
+.button-three[aria-expanded=true] .line {
+  stroke-dasharray: 60 105 60 300;
+  stroke-dashoffset: -90;
+}
+
 /*# sourceMappingURL=style13.css.map */

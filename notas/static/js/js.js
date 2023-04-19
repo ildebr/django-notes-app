@@ -1,5 +1,6 @@
 $("nav.about-barras").click(function(){
     $("section.extra").toggleClass("initial-pos");
+    $(".main-header-content").toggleClass("active");
     $("img.barras").toggleClass("hide");
     $("img.barras").css("background-color: red")
     //$("section.more-stuff>h2.title").attr('data-aos', 'fade-right')
